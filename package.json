@@ -1,0 +1,32 @@
+{
+  "name": "fit-tracker",
+  "version": "0.0.0",
+  "description": "## Description",
+  "main": "index.html",
+  "scripts": {
+    "test": "mocha",
+    "start": "browser-sync start --server --directory --files='src/*.html, src/css/main.css, src/js/*.js'",
+    "sass": "node-sass src/scss/main.scss src/css/main.css --watch src/scss/*.scss",
+    "install:bower": "bower install --save",
+    "postinstall:bower": "wiredep --src 'src/*.html'",
+    "postinstall": "bower install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fit-Tracker/gui.git"
+  },
+  "author": "Dave and Terry",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Fit-Tracker/gui/issues"
+  },
+  "homepage": "https://github.com/Fit-Tracker/gui#readme",
+  "dependencies": {
+    "bower": "^1.6.5",
+    "browser-sync": "^2.9.11",
+    "gulp": "^3.9.0",
+    "modernizr": "^3.1.0",
+    "node-sass": "^3.4.0",
+    "wiredep": "^2.2.2"
+  }
+}
