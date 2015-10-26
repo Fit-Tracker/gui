@@ -1,0 +1,24 @@
+{
+  "name": "fit-tracker",
+  "description": "## Description",
+  "main": "index.html",
+  "authors": [
+    "Dave and Terry"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/Fit-Tracker/gui",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "angular": "~1.4.7",
+    "angular-route": "~1.4.7",
+    "normalize-css": "~3.0.3"
+  }
+}
