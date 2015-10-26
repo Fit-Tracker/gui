@@ -5,17 +5,15 @@ rm -rf dist/*
 echo 'Step 1: Copy all the HTML'
 cp src/index.html dist/
 mkdir dist/partials/
-cp -r src/partials dist/
+cp -r src/partials dist/partials/
 
-echo 'Step 2a: Build all the Sass into CSS!'
-npm run sass
-
-echo 'Step 2b: Copy CSS into `dist/`?'
-mkdir dist/css/
-cp src/css/main.css dist/css/
+echo 'Step 2: Build all the Sass into CSS!'
+mkdir dist/css
+node-sass src/scss/main.scss dist/css/main.css
 
 echo 'Step 3: Copy all the JS'
-mkdir -p dist/js && cp -r src/js dist/
+mkdir -p dist/js
+cp -r src/js dist/
 
 echo 'Step 4: Copy all the `bower_components/`!'
 
@@ -36,4 +34,4 @@ cp bower_components/angular-route/angular-route.js dist/bower_components/angular
 echo 'Step 5: Copy img folder'
 cp  -r src/img/ dist/img
 
-npm run start:dist
+npm run start

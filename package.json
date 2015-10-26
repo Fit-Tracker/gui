@@ -6,7 +6,8 @@
   "scripts": {
     "test": "mocha",
     "start": "browser-sync start --server --directory --files='src/*.html, src/css/main.css, src/js/*.js'",
-    "sass": "node-sass src/scss/main.scss src/css/main.css --watch src/scss/*.scss",
+    "sass": "node-sass src/scss/main.scss src/css/main.css",
+    "sass:watch": "node-sass src/scss/main.scss src/css/main.css --watch src/scss/*.scss",
     "install:bower": "bower install --save",
     "postinstall:bower": "wiredep --src 'src/*.html'",
     "postinstall": "bower install"
