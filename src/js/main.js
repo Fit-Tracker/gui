@@ -65,7 +65,22 @@
 
     })
 
+    .run(function($http, $rootScope){
+      $http.get("/src/activities.json")
+        .then(function(response){
+          // console.log(response.data)
+          $rootScope.activities = response.data;
+        });
+    })
 
+    .run(function($http, $rootScope){
+      $http.get("/src/situps.json")
+        .then(function(response){
+          console.log("got them stats")
+          // console.log(response.data)
+          $rootScope.stats = response.data;
+        });
+    })
 
 
 
