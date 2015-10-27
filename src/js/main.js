@@ -33,8 +33,17 @@
       this.createUser = function(newUser){
         console.log(this.newUser);
         this.newUser = {};
-  };
-  })
+      };
+    })
+
+    .controller("userLoginController", function(){
+      this.user = {};
+      this.login = function(user){
+        console.log(this.user);
+        this.user = {};
+      };
+    })
+
 
 
 

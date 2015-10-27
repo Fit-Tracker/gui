@@ -1,6 +1,15 @@
-<h3>login/user creation partial page</h3>
-create new account or login to existing account - maybe some tabs?
+<h3>user login partial page</h3>
+Don't have an account? <a href="#user-create">create one now</a>
 <br>
-<a href="#user-create">create new user</a>
 <br>
-<img src="img/logo.png">
+<form name="userLoginForm" ng-controller="userLoginController as loginCtrl" ng-submit="userLoginForm.$valid && loginCtrl.login(user)" novalidate>
+  <label>username</label>
+    <input ng-model="loginCtrl.user.username" required><br>
+  <label>password</label>
+    <input ng-model="loginCtrl.user.password" required><br>
+  <button type="submit" value="Submit">login</button>
+  <blockquote>
+    username: {{loginCtrl.user.username}}<br>
+    password: {{loginCtrl.user.password}}<br>
+  </blockquote>
+</form>
