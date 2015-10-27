@@ -1,8 +1,8 @@
-<h3>activities partial page</h3>
+<h3>activities</h3>
 
 <!-- <a href="#stats/5}" >pushups</a> -->
 <div ng-repeat="activity in activities">
-  <a href="#stats/{{activity.id}}">{{activity.name}}</a><br>
+  <a href="#stats/{{activity.id}}">{{activity.activity_name}}</a><br>
 </div>
 <br>
 <!-- <img src="img/logo.png"> -->
@@ -12,7 +12,7 @@
 <form name="newActivityForm" ng-controller="newActivityController as activityCtrl" ng-submit="newActivityForm.$valid && activityCtrl.createActivity(activity)" novalidate>
   <label>activity name</label><input type="text" ng-model="activityCtrl.activity.name" required>
   <button type="submit" value="Submit">submit</button>
-  <blockquote>
+  <!-- <blockquote>
     activity: {{activityCtrl.activity.name}}<br>
-  </blockquote>
+  </blockquote> -->
 </form>
