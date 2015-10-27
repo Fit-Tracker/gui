@@ -13,7 +13,10 @@
         .when('/stats', {
           templateUrl: 'partials/stats.html'
         })
-        // .else()
+        .otherwise({
+          redirectTo: '/404.html',
+          templateUrl: 'partials/404.html'
+        })
     })
 
     .controller('MainController', function($scope, $route, $routeParams, $location){
