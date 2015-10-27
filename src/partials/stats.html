@@ -2,4 +2,14 @@
 
 stats about individual activities
 <br>
-<img src="img/logo.png">
+<!-- <img src="img/logo.png"> -->
+
+<form name="newStatForm" ng-controller="newStatController as statCtrl" ng-submit="newStatForm.$valid && statCtrl.createStat(stat)" novalidate>
+  <label>date</label><input type="date" ng-model="statCtrl.stat.date" required>
+  <label>number</label><input type="number" ng-model="statCtrl.stat.number" required>
+  <button type="submit" value="Submit">submit</button>
+  <blockquote>
+    date: {{statCtrl.stat.date | date}}<br>
+    number: {{statCrtl.stat.number}}
+  </blockquote>
+</form>

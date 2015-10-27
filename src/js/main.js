@@ -28,10 +28,13 @@
     $scope.$routeParams = $routeParams;
     })
 
-    .controller("userCreateController", function(){
+    .controller("userCreateController", function($http){
       this.newUser = {};
       this.createUser = function(newUser){
         console.log(this.newUser);
+        $http.get("someurl", this.newUser)
+        .then(function(response){console.log("success")},
+        function(response){console.log("FAILURE!!!!")});
         this.newUser = {};
       };
     })
@@ -42,6 +45,24 @@
         console.log(this.user);
         this.user = {};
       };
+    })
+
+    .controller("newActivityController", function(){
+      this.activity = {};
+      this.createActivity = function(activity){
+        console.log(this.activity);
+        this.activity = {};
+      };
+
+    })
+
+    .controller("newStatController", function(){
+      this.stat = {};
+      this.createStat = function(stat){
+        console.log(this.stat);
+        this.stat = {};
+      };
+
     })
 
 

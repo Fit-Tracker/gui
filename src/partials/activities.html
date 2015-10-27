@@ -1,6 +1,15 @@
 <h3>activities partial page</h3>
 
-show (link to) user created activities - drop down menu?
-option to create new activities
+show (link to) user created activities
 <br>
-<img src="img/logo.png">
+<!-- <img src="img/logo.png"> -->
+
+
+<h4>create new activity</h4>
+<form name="newActivityForm" ng-controller="newActivityController as activityCtrl" ng-submit="newActivityForm.$valid && activityCtrl.createActivity(activity)" novalidate>
+  <label>activity name</label><input type="text" ng-model="activityCtrl.activity.name" required>
+  <button type="submit" value="Submit">submit</button>
+  <blockquote>
+    activity: {{activityCtrl.activity.name}}<br>
+  </blockquote>
+</form>
