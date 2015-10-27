@@ -7,7 +7,7 @@
         .when('/user', {
           templateUrl: 'partials/user.html'
         })
-        .when('/activities',{
+        .when('/activities', {
           templateUrl: 'partials/activities.html'
         })
         .when('/stats', {
