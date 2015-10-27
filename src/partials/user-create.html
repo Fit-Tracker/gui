@@ -1,11 +1,11 @@
 
 <form name="createUserForm" ng-controller="userCreateController as userCtrl" ng-submit="createUserForm.$valid && userCtrl.createUser(newUser)" novalidate>
-  <h3>Creat new user account</h3>
+  <h3>Create new user account</h3>
   <input type="email" ng-model="userCtrl.newUser.email" placeholder="email address" required/>
   <input type="text" ng-model="userCtrl.newUser.username" placeholder="username" required>
   <input type="password" placeholder="password" ng-model="userCtrl.newUser.password" required>
   <input type="password" placeholder="confirm password" ng-model="userCtrl.newUser.confirmPassword" required>
-  <button type="submit" value="Submit">create account</button>
+  <button class="create" type="submit" value="Submit">create account</button>
   <!-- <blockquote>
     email address: {{userCtrl.newUser.email}}<br>
     username: {{userCtrl.newUser.username}}<br>
