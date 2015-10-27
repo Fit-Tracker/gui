@@ -7,6 +7,9 @@
         .when('/user', {
           templateUrl: 'partials/user.html'
         })
+        .when('/user-create', {
+          templateUrl: 'partials/user-create.html'
+        })
         .when('/activities', {
           templateUrl: 'partials/activities.html'
         })
@@ -23,6 +26,14 @@
     $scope.$route = $route;
     $scope.$location = $location;
     $scope.$routeParams = $routeParams;
+    })
+
+    .controller("userCreateController", function(){
+      this.newUser = {};
+      this.createUser = function(newUser){
+        console.log(this.newUser);
+        this.newUser = {};
+  };
   })
 
 

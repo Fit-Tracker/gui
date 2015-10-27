@@ -1,0 +1,16 @@
+<h3>user creation page</h3>
+
+<form name="createUserForm" ng-controller="userCreateController as userCtrl" ng-submit="createUserForm.$valid && userCtrl.createUser(newUser)" novalidate>
+  <label>username</label>
+    <input ng-model="userCtrl.newUser.username" required><br>
+  <label>password</label>
+    <input ng-model="userCtrl.newUser.password" required><br>
+  <label>confirm password</label>
+    <input ng-model="userCtrl.newUser.confirmPassword" required><br>
+  <button type="submit" value="Submit">create account</button>
+  <blockquote>
+    username: {{userCtrl.newUser.username}}<br>
+    password: {{userCtrl.newUser.password}}<br>
+    confirm password: {{userCtrl.newUser.confirmPassword}}
+  </blockquote>
+</form>
