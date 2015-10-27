@@ -2,10 +2,10 @@
   angular.module('fitTracker', ['ngRoute'], function($routeProvider){
       $routeProvider
         .when('/',{
-          redirectTo: 'login'
+          redirectTo: 'user'
         })
-        .when('/login', {
-          templateUrl: 'partials/login.html'
+        .when('/user', {
+          templateUrl: 'partials/user.html'
         })
         .when('/activities',{
           templateUrl: 'partials/activities.html'
