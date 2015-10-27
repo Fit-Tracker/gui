@@ -1,6 +1,14 @@
 body {
-  // background-color: lightgray;
-  margin: 5%
+  background-color: lightgray;
+  margin: 5%;
+  a {
+    text-decoration: none;
+    color: blue;
+    &:hover {
+      color: darkgray;
+    }
+  }
+
 }
 
 main.container {
@@ -8,5 +16,14 @@ main.container {
 }
 
 header {
+  text-align: center;
   // background-color: lightgray;
+  padding-bottom: 5%;
+  img {
+    width: 2em;
+    display: inline;
+  }
+  h2 {
+    display: inline;
+  }
 }
