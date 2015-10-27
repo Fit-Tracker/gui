@@ -13,6 +13,22 @@
         .when('/activities', {
           templateUrl: 'partials/activities.html'
         })
+        .when('/stats/:id',{
+          templateUrl: 'partials/stats.html',
+          controller: function($location, $routeParams, $http, $rootScope){
+            var id = $routeParams.id;
+            console.log("stats page controller: " + id);
+            $location.path('/stats');
+            $http.get("/src/"+ id +"/stats.json")
+              .then(function(response){
+                // console.log("got them stats")
+                // console.log(response.data)
+                $rootScope.stats = response.data;
+              });
+          },
+          controllerAs: 'statsPage'
+        })
+
         .when('/stats', {
           templateUrl: 'partials/stats.html'
         })
@@ -73,14 +89,14 @@
         });
     })
 
-    .run(function($http, $rootScope){
-      $http.get("/src/situps.json")
-        .then(function(response){
-          console.log("got them stats")
-          // console.log(response.data)
-          $rootScope.stats = response.data;
-        });
-    })
+    // .run(function($http, $rootScope){
+    //   $http.get("/src/" + id + ".json")
+    //     .then(function(response){
+    //       // console.log("got them stats")
+    //       // console.log(response.data)
+    //       $rootScope.stats = response.data;
+    //     });
+    // })
 
 
 
