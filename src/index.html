@@ -13,22 +13,29 @@
         <!-- endbower -->
         <link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
-
     </head>
     <body>
+      <main class="container" ng-app="fitTracker" ng-controller="MainController">
+        <header>
+          <h2>Future home of Fit-Tracker</h2>
+          <a href="#user">User account login/creation</a>
+          <a href="#activities">Activities page</a>
+          <a href="#stats">Activity stats page</a>
+        </header>
+        <div class="place-holder">
+          <ng-view />
+        </div>
 
 
-        <!-- Add your site or application content here -->
-        <p>Future home of Fit-Tracker</p>
+
+      </main> <!-- end main.container -->
         <!-- bower:js -->
         <script src="../bower_components/jquery/dist/jquery.js"></script>
         <script src="../bower_components/angular/angular.js"></script>
         <script src="../bower_components/angular-route/angular-route.js"></script>
         <!-- endbower -->
-
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
-
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
