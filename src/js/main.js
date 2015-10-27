@@ -19,10 +19,10 @@
             var id = $routeParams.id;
             console.log("stats page controller: " + id);
             $location.path('/stats');
-            $http.get("/src/"+ id +"/stats.json")
+            $http.get("/src/api/activities/"+ id +".json")
               .then(function(response){
                 // console.log("got them stats")
-                // console.log(response.data)
+                // console.log(response.data);
                 $rootScope.stats = response.data;
               });
           },
@@ -82,7 +82,7 @@
     })
 
     .run(function($http, $rootScope){
-      $http.get("/src/activities.json")
+      $http.get("/src/api/activities.json")
         .then(function(response){
           // console.log(response.data)
           $rootScope.activities = response.data;

@@ -1,0 +1,38 @@
+[
+  {
+    "id": 7,
+    "activity_id": 9,
+    "activity_date": "2015-10-07",
+    "activity_count": 1
+  },
+  {
+    "id": 24,
+    "activity_id": 9,
+    "activity_date": "2015-10-10",
+    "activity_count": 4
+  },
+  {
+    "id": 75,
+    "activity_id": 9,
+    "activity_date": "2015-10-01",
+    "activity_count": 4
+  },
+  {
+    "id": 83,
+    "activity_id": 9,
+    "activity_date": "2015-10-16",
+    "activity_count": 3
+  },
+  {
+    "id": 104,
+    "activity_id": 9,
+    "activity_date": "2015-10-11",
+    "activity_count": 2
+  },
+  {
+    "id": 238,
+    "activity_id": 9,
+    "activity_date": "2015-10-14",
+    "activity_count": 1
+  }
+]
