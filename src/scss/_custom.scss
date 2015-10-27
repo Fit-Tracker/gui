@@ -1,6 +1,14 @@
 body {
-  // background-color: lightgray;
-  margin: 5%
+  background-color: lightgray;
+  margin: 5%;
+  a {
+    text-decoration: none;
+    color: blue;
+    &:hover {
+      color: darkgray;
+    }
+  }
+
 }
 
 main.container {
@@ -8,5 +16,28 @@ main.container {
 }
 
 header {
+  text-align: center;
   // background-color: lightgray;
+  // padding-bottom: 5%;
+  padding-top: 5%;
+  img {
+    width: 2.5em;
+    display: inline;
+  }
+  h1 {
+    display: inline;
+    padding: 2%;
+    vertical-align: middle;
+  }
+}
+
+div.image {
+  margin-top: 25%;
+  display: block;
+  text-align: center;
+  img#error {
+    padding-top: 5%;
+    padding-bottom: 10%;
+    width: 10em;
+  }
 }
