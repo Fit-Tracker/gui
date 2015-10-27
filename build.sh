@@ -4,8 +4,8 @@ rm -rf dist/*
 
 echo 'Step 1: Copy all the HTML'
 cp src/index.html dist/
-mkdir dist/partials/
-cp -r src/partials dist/partials/
+mkdir dist/partials
+cp -r src/partials dist/
 
 echo 'Step 2: Build all the Sass into CSS!'
 mkdir dist/css
@@ -34,4 +34,4 @@ cp bower_components/angular-route/angular-route.js dist/bower_components/angular
 echo 'Step 5: Copy img folder'
 cp  -r src/img/ dist/img
 
-npm run start
+npm run start:dist
