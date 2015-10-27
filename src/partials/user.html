@@ -1,9 +1,8 @@
 
 <form class="user-login" name="userLoginForm" ng-controller="userLoginController as loginCtrl" ng-submit="userLoginForm.$valid && loginCtrl.login(user)" novalidate>
   <input type="text" ng-model="loginCtrl.user.username" placeholder="username" required>
-    <br>
   <input type="password" ng-model="loginCtrl.user.password" placeholder="password" required>
-    <br>
+  <!-- <br> -->
   <button type="submit" value="Submit">login</button>
   <!-- <blockquote>
     username: {{loginCtrl.user.username}}<br>
