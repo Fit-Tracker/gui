@@ -13,6 +13,22 @@
         .when('/activities', {
           templateUrl: 'partials/activities.html'
         })
+        .when('/stats/:id',{
+          templateUrl: 'partials/stats.html',
+          controller: function($location, $routeParams, $http, $rootScope){
+            var id = $routeParams.id;
+            console.log("stats page controller: " + id);
+            $location.path('/stats');
+            $http.get("/src/"+ id +"/stats.json")
+              .then(function(response){
+                // console.log("got them stats")
+                // console.log(response.data)
+                $rootScope.stats = response.data;
+              });
+          },
+          controllerAs: 'statsPage'
+        })
+
         .when('/stats', {
           templateUrl: 'partials/stats.html'
         })
@@ -28,10 +44,13 @@
     $scope.$routeParams = $routeParams;
     })
 
-    .controller("userCreateController", function(){
+    .controller("userCreateController", function($http){
       this.newUser = {};
       this.createUser = function(newUser){
         console.log(this.newUser);
+        $http.get("someurl", this.newUser)
+        .then(function(response){console.log("success")},
+        function(response){console.log("FAILURE!!!!")});
         this.newUser = {};
       };
     })
@@ -44,7 +63,40 @@
       };
     })
 
+    .controller("newActivityController", function(){
+      this.activity = {};
+      this.createActivity = function(activity){
+        console.log(this.activity);
+        this.activity = {};
+      };
 
+    })
+
+    .controller("newStatController", function(){
+      this.stat = {};
+      this.createStat = function(stat){
+        console.log(this.stat);
+        this.stat = {};
+      };
+
+    })
+
+    .run(function($http, $rootScope){
+      $http.get("/src/activities.json")
+        .then(function(response){
+          // console.log(response.data)
+          $rootScope.activities = response.data;
+        });
+    })
+
+    // .run(function($http, $rootScope){
+    //   $http.get("/src/" + id + ".json")
+    //     .then(function(response){
+    //       // console.log("got them stats")
+    //       // console.log(response.data)
+    //       $rootScope.stats = response.data;
+    //     });
+    // })
 
 
 
