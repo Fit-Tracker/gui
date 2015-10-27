@@ -1,0 +1,62 @@
+[
+  {
+    "id": 32,
+    "activity_id": 6,
+    "activity_date": "2015-10-13",
+    "activity_count": 1
+  },
+  {
+    "id": 40,
+    "activity_id": 6,
+    "activity_date": "2015-10-13",
+    "activity_count": 1
+  },
+  {
+    "id": 46,
+    "activity_id": 6,
+    "activity_date": "2015-10-13",
+    "activity_count": 4
+  },
+  {
+    "id": 136,
+    "activity_id": 6,
+    "activity_date": "2015-10-02",
+    "activity_count": 2
+  },
+  {
+    "id": 156,
+    "activity_id": 6,
+    "activity_date": "2015-10-16",
+    "activity_count": 4
+  },
+  {
+    "id": 172,
+    "activity_id": 6,
+    "activity_date": "2015-10-15",
+    "activity_count": 3
+  },
+  {
+    "id": 181,
+    "activity_id": 6,
+    "activity_date": "2015-10-15",
+    "activity_count": 1
+  },
+  {
+    "id": 191,
+    "activity_id": 6,
+    "activity_date": "2015-10-02",
+    "activity_count": 2
+  },
+  {
+    "id": 223,
+    "activity_id": 6,
+    "activity_date": "2015-10-07",
+    "activity_count": 2
+  },
+  {
+    "id": 230,
+    "activity_id": 6,
+    "activity_date": "2015-10-20",
+    "activity_count": 4
+  }
+]
