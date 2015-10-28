@@ -17,13 +17,8 @@
           templateUrl: 'partials/stats.html',
           controller: function($location, $routeParams, $http, $rootScope){
             var id = $routeParams.id;
-            // console.log("stats page controller: " + id);
-            // $location.path('/stats');
             $http.get("https://gentle-headland-1205.herokuapp.com/api/activities/"+ id + "/stats")
-            // "https://gentle-headland-1205.herokuapp.com/api/activities/1/stats"
               .then(function(response){
-                // console.log("got them stats")
-                // console.log(response.data);
                 $rootScope.stats = response.data;
                 graph(response.data);
               });
@@ -93,10 +88,8 @@
     })
 
     .run(function($http, $rootScope){
-      // $http.get("/src/api/activities.json")
       $http.get("https://gentle-headland-1205.herokuapp.com/activities")
         .then(function(response){
-          // console.log(response.data)
           $rootScope.activities = response.data;
         });
     })
@@ -111,18 +104,7 @@
     // })
 
   function graph(data){
-  //   var data = [
-  //   [2000,45],
-  //   [2001,4],
-  //   [2002,2],
-  //   [2003,2],
-  //   [2004,4],
-  //   [2005,12],
-  //   [2006,23],
-  //   [2007,54],
-  //   [2008,12],
-  //   [2009,1]
-  // ];
+
     svg = d3.select("svg");
     g = svg.append("g");
     g.attr("transform", "translate(100,50)");
@@ -146,16 +128,11 @@
     for(var i = 0; i < data.length; i++){
       var date = new Date(data[i].timestamp);
       var yData = data[i].stat;
-      console.log(date, yData)
-      g.append("circle").attr("cx", x(date.getDate())).attr("cy", y(yData)).attr("r", 10);
+      g.append("circle")
+        .attr("cx", x(date.getDate()))
+        .attr("cy", y(yData))
+        .attr("r", 10);
     };
-
-
-    // console.log(data[0])
-    // var mfindate = new Date(data[0].timestamp)
-    // console.log(data[0].stat + "  " + mfindate.getDate())
-    // console.log(data.length)
-
 
  };
 
