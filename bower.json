@@ -19,6 +19,7 @@
     "jquery": "~2.1.4",
     "angular": "~1.4.7",
     "angular-route": "~1.4.7",
-    "normalize-css": "~3.0.3"
+    "normalize-css": "~3.0.3",
+    "d3": "~3.5.6"
   }
 }
