@@ -1,0 +1,26 @@
+[
+  {
+    "id": 81,
+    "activity_id": 7,
+    "activity_date": "2015-10-20",
+    "activity_count": 2
+  },
+  {
+    "id": 112,
+    "activity_id": 7,
+    "activity_date": "2015-10-02",
+    "activity_count": 1
+  },
+  {
+    "id": 117,
+    "activity_id": 7,
+    "activity_date": "2015-10-25",
+    "activity_count": 2
+  },
+  {
+    "id": 217,
+    "activity_id": 7,
+    "activity_date": "2015-10-12",
+    "activity_count": 1
+  }
+]
