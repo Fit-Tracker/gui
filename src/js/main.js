@@ -83,7 +83,7 @@
          $http.post("https://gentle-headland-1205.herokuapp.com/api/activities/"+id+"/stats/", this.stat)
         .then(function(repsonse){location.reload()},
           function(response){console.log("failure")});
-        console.log(this.stat.timestamp.toLocaleDateString());
+        console.log(this.stat.timestamp.toDateString("yyyy-MM-dd"));
         console.log(this.stat)
         console.log($routeParams.id)
         this.stat = {};
