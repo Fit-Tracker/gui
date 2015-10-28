@@ -2,15 +2,11 @@
 
 <!-- <a href="#stats/5}" >pushups</a> -->
 <div ng-repeat="activity in activities">
-  <a href="#stats/{{activity.id}}">{{activity.activity_name}}</a><br>
+  <a href="#stats/{{activity.pk}}">{{activity.title}}</a>
 </div>
-<br>
-<!-- <img src="img/logo.png"> -->
-
-
 <h4>create new activity</h4>
 <form name="newActivityForm" ng-controller="newActivityController as activityCtrl" ng-submit="newActivityForm.$valid && activityCtrl.createActivity(activity)" novalidate>
-  <label>activity name</label><input type="text" ng-model="activityCtrl.activity.name" required>
+  <label>activity name</label><input type="text" ng-model="activityCtrl.activity.title" required>
   <button type="submit" value="Submit">submit</button>
   <!-- <blockquote>
     activity: {{activityCtrl.activity.name}}<br>

@@ -17,9 +17,10 @@
           templateUrl: 'partials/stats.html',
           controller: function($location, $routeParams, $http, $rootScope){
             var id = $routeParams.id;
-            console.log("stats page controller: " + id);
-            $location.path('/stats');
-            $http.get("/src/api/activities/"+ id +".json")
+            // console.log("stats page controller: " + id);
+            // $location.path('/stats');
+            $http.get("https://gentle-headland-1205.herokuapp.com/api/activities/"+ id + "/stats")
+            // "https://gentle-headland-1205.herokuapp.com/api/activities/1/stats"
               .then(function(response){
                 // console.log("got them stats")
                 // console.log(response.data);
@@ -63,26 +64,36 @@
       };
     })
 
-    .controller("newActivityController", function(){
+    .controller("newActivityController", function($http){
       this.activity = {};
       this.createActivity = function(activity){
         console.log(this.activity);
+        $http.post("https://gentle-headland-1205.herokuapp.com/api/activities/", this.activity)
+        .then(function(repsonse){location.reload()},
+          function(response){console.log("failure")});
         this.activity = {};
       };
 
     })
 
-    .controller("newStatController", function(){
+    .controller("newStatController", function($http, $routeParams){
       this.stat = {};
       this.createStat = function(stat){
-        console.log(this.stat);
+        var id = $routeParams.id
+         $http.post("https://gentle-headland-1205.herokuapp.com/api/activities/"+id+"/stats/", this.stat)
+        .then(function(repsonse){location.reload()},
+          function(response){console.log("failure")});
+        console.log(this.stat.timestamp.toDateString("yyyy-MM-dd"));
+        console.log(this.stat)
+        console.log($routeParams.id)
         this.stat = {};
       };
 
     })
 
     .run(function($http, $rootScope){
-      $http.get("/src/api/activities.json")
+      // $http.get("/src/api/activities.json")
+      $http.get("https://gentle-headland-1205.herokuapp.com/activities")
         .then(function(response){
           // console.log(response.data)
           $rootScope.activities = response.data;
