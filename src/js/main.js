@@ -25,7 +25,7 @@
                 // console.log("got them stats")
                 // console.log(response.data);
                 $rootScope.stats = response.data;
-                graph();
+                graph(response.data);
               });
           },
           controllerAs: 'statsPage'
@@ -110,7 +110,7 @@
     //     });
     // })
 
-  function graph(){
+  function graph(data){
   //   var data = [
   //   [2000,45],
   //   [2001,4],
@@ -128,13 +128,13 @@
     g.attr("transform", "translate(100,50)");
 
     x = d3.scale.linear()
-        .domain([1999, 2010])  // Fill in the domain values for the x axis
+        .domain([1, 31])  // Fill in the domain values for the x axis
         .range([0, 800]);
     y = d3.scale.linear()
-        .domain([0, 60])  // Fill in the domain values for the y axis
+        .domain([0, 100])  // Fill in the domain values for the y axis
         .range([400, 0]);
 
-    x_axis = d3.svg.axis().scale(x).orient("bottom").ticks(5).tickFormat(d3.format("d"));
+    x_axis = d3.svg.axis().scale(x).orient("bottom").ticks(31).tickFormat(d3.format("d"));
     y_axis = d3.svg.axis().scale(y).orient("left").ticks(4);
 
     g.call(y_axis);
@@ -143,10 +143,18 @@
     gx.call(x_axis);
     gx.attr("transform", "translate(0,400)");
 
+    for(var i = 0; i < data.length; i++){
+      var date = new Date(data[i].timestamp);
+      var yData = data[i].stat;
+      console.log(date, yData)
+      g.append("circle").attr("cx", x(date.getDate())).attr("cy", y(yData)).attr("r", 10);
+    };
 
-    g.append("circle").attr("cx", x(2005)).attr("cy", y(50)).attr("r", 10);
-    g.append("circle").attr("cx", x(2006)).attr("cy", y(30)).attr("r", 10);
 
+    // console.log(data[0])
+    // var mfindate = new Date(data[0].timestamp)
+    // console.log(data[0].stat + "  " + mfindate.getDate())
+    // console.log(data.length)
 
 
  };
