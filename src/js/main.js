@@ -111,18 +111,18 @@
     // })
 
   function graph(){
-    var data = [
-    [2000,45],
-    [2001,4],
-    [2002,2],
-    [2003,2],
-    [2004,4],
-    [2005,12],
-    [2006,23],
-    [2007,54],
-    [2008,12],
-    [2009,1]
-  ];
+  //   var data = [
+  //   [2000,45],
+  //   [2001,4],
+  //   [2002,2],
+  //   [2003,2],
+  //   [2004,4],
+  //   [2005,12],
+  //   [2006,23],
+  //   [2007,54],
+  //   [2008,12],
+  //   [2009,1]
+  // ];
     svg = d3.select("svg");
     g = svg.append("g");
     g.attr("transform", "translate(100,50)");
@@ -143,12 +143,13 @@
     gx.call(x_axis);
     gx.attr("transform", "translate(0,400)");
 
-    // Okay, now all of your axes are set up.  Add code to draw points here.
 
-    // g.append( ). //Fill in the parens and add stuff after the last dot, then make more of these lines.
+    g.append("circle").attr("cx", x(2005)).attr("cy", y(50)).attr("r", 10);
+    g.append("circle").attr("cx", x(2006)).attr("cy", y(30)).attr("r", 10);
+
+
 
  };
-
 
 
 })(); //end IIFE
