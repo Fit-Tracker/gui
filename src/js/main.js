@@ -17,7 +17,7 @@
           templateUrl: 'partials/stats.html',
           controller: function($location, $routeParams, $http, $rootScope){
             var id = $routeParams.id;
-            console.log("stats page controller: " + id);
+            // console.log("stats page controller: " + id);
             $location.path('/stats');
             $http.get("/src/api/activities/"+ id +".json")
               .then(function(response){
