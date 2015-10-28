@@ -18,7 +18,7 @@
           controller: function($location, $routeParams, $http, $rootScope){
             var id = $routeParams.id;
             // console.log("stats page controller: " + id);
-            $location.path('/stats');
+            // $location.path('/stats');
             $http.get("https://gentle-headland-1205.herokuapp.com/api/activities/"+ id + "/stats")
             // "https://gentle-headland-1205.herokuapp.com/api/activities/1/stats"
               .then(function(response){
@@ -76,13 +76,16 @@
 
     })
 
-    .controller("newStatController", function($http){
+    .controller("newStatController", function($http, $routeParams){
       this.stat = {};
       this.createStat = function(stat){
-        // $http.post("https://gentle-headland-1205.herokuapp.com/api/activities/1/stats/", this.stat)
-        // .then(function(repsonse){location.reload()},
-        //   function(response){console.log("failure")});
-        console.log(this.stat.timestamp);
+        var id = $routeParams.id
+         $http.post("https://gentle-headland-1205.herokuapp.com/api/activities/"+id+"/stats/", this.stat)
+        .then(function(repsonse){location.reload()},
+          function(response){console.log("failure")});
+        console.log(this.stat.timestamp.toLocaleDateString());
+        console.log(this.stat)
+        console.log($routeParams.id)
         this.stat = {};
       };
 

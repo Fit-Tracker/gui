@@ -1,7 +1,7 @@
 <h3>stats</h3>
 
 <div ng-repeat="stat in stats | orderBy: '-timestamp'">
-  {{stat.timestamp | date}} : {{stat.stat}}
+  {{stat.timestamp | date}} : {{stat.stat}} 
 </div>
 <br>
 <!-- <img src="img/logo.png"> -->
@@ -9,7 +9,8 @@
 <form name="newStatForm" ng-controller="newStatController as statCtrl" ng-submit="newStatForm.$valid && statCtrl.createStat(stat)" novalidate>
   <label>date</label><input type="date" ng-model="statCtrl.stat.timestamp" required>
   <label>number</label><input type="number" ng-model="statCtrl.stat.stat" required>
-  <button type="submit" value="Submit">submit</button>
+  <button type="submit"
+  value="Submit">submit</button>
   <blockquote>
     date: {{statCtrl.stat.timestamp | date}}<br>
     number: {{statCrtl.stat.stat}}
