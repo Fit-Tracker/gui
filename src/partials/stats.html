@@ -1,9 +1,12 @@
-<h3>activity title goes here</h3>
+<!-- <h3>activity title goes here</h3> -->
 
-<div ng-repeat="stat in stats | orderBy: '-timestamp'">
+<!-- <div ng-repeat="stat in stats | orderBy: '-timestamp'">
   {{stat.timestamp | date}} : {{stat.stat}}
-</div>
-<br>
+</div> -->
+
+<svg id="graph">
+</svg>
+
 <!-- <img src="img/logo.png"> -->
 
 <form name="newStatForm" ng-controller="newStatController as statCtrl" ng-submit="newStatForm.$valid && statCtrl.createStat(stat)" novalidate>

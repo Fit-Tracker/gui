@@ -17,14 +17,10 @@
           templateUrl: 'partials/stats.html',
           controller: function($location, $routeParams, $http, $rootScope){
             var id = $routeParams.id;
-            // console.log("stats page controller: " + id);
-            // $location.path('/stats');
             $http.get("https://gentle-headland-1205.herokuapp.com/api/activities/"+ id + "/stats")
-            // "https://gentle-headland-1205.herokuapp.com/api/activities/1/stats"
               .then(function(response){
-                // console.log("got them stats")
-                // console.log(response.data);
                 $rootScope.stats = response.data;
+                graph(response.data);
               });
           },
           controllerAs: 'statsPage'
@@ -92,10 +88,8 @@
     })
 
     .run(function($http, $rootScope){
-      // $http.get("/src/api/activities.json")
       $http.get("https://gentle-headland-1205.herokuapp.com/activities")
         .then(function(response){
-          // console.log(response.data)
           $rootScope.activities = response.data;
         });
     })
@@ -109,7 +103,38 @@
     //     });
     // })
 
+  function graph(data){
 
+    svg = d3.select("svg");
+    g = svg.append("g");
+    g.attr("transform", "translate(100,50)");
+
+    x = d3.scale.linear()
+        .domain([1, 31])  // Fill in the domain values for the x axis
+        .range([0, 800]);
+    y = d3.scale.linear()
+        .domain([0, 100])  // Fill in the domain values for the y axis
+        .range([400, 0]);
+
+    x_axis = d3.svg.axis().scale(x).orient("bottom").ticks(31).tickFormat(d3.format("d"));
+    y_axis = d3.svg.axis().scale(y).orient("left").ticks(4);
+
+    g.call(y_axis);
+
+    gx = g.append("g")
+    gx.call(x_axis);
+    gx.attr("transform", "translate(0,400)");
+
+    for(var i = 0; i < data.length; i++){
+      var date = new Date(data[i].timestamp);
+      var yData = data[i].stat;
+      g.append("circle")
+        .attr("cx", x(date.getDate()))
+        .attr("cy", y(yData))
+        .attr("r", 10);
+    };
+
+ };
 
 
 })(); //end IIFE
