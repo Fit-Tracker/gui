@@ -1,0 +1,31 @@
+
+header {
+  h1 {
+    font-size: 4em;
+  }
+  img {
+    width: 5em;
+  }
+}
+
+div.place-holder {
+  font-size: 2em;
+}
+
+form {
+  input {
+    // height: 2em;
+    width: 80%;
+    margin-left: 10%;
+    padding-bottom: 1%;
+  }
+  button {
+    width: 30%;
+    margin-left: 35%;
+    // height: 2em;
+  }
+}
+button.create {
+  width: 80%;
+  margin-left: 10%;
+}

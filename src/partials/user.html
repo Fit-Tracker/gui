@@ -1,0 +1,15 @@
+
+<form class="user-login" name="userLoginForm" ng-controller="userLoginController as loginCtrl" ng-submit="userLoginForm.$valid && loginCtrl.login(user)" novalidate>
+  <input type="text" ng-model="loginCtrl.user.username" placeholder="username" required>
+  <input type="password" ng-model="loginCtrl.user.password" placeholder="password" required>
+  <!-- <br> -->
+  <button type="submit" value="Submit">login</button>
+  <!-- <blockquote>
+    username: {{loginCtrl.user.username}}<br>
+    password: {{loginCtrl.user.password}}<br>
+  </blockquote> -->
+</form>
+<footer class="create-account">
+Don't have an account?<br>
+<a href="#user-create">create new account</a>
+</footer>
