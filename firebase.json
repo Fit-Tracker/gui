@@ -1,5 +1,5 @@
 {
-  "firebase": "fit-tracker2015",
+  "firebase": "",
   "public": "dist",
   "ignore": [
     "firebase.json",

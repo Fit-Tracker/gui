@@ -1,5 +1,5 @@
 {
-  "name": "fit-tracker",
+  "name": "Careday",
   "version": "0.0.0",
   "description": "## Description",
   "main": "index.html",
@@ -15,14 +15,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Fit-Tracker/gui.git"
+    "url": "git+https://github.com/Careday/gui.git"
   },
-  "author": "Dave and Terry",
+  "author": "Terry",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Fit-Tracker/gui/issues"
+    "url": "https://github.com/Careday/gui/issues"
   },
-  "homepage": "https://github.com/Fit-Tracker/gui#readme",
+  "homepage": "https://github.com/Careday/gui#readme",
   "dependencies": {
     "bower": "^1.6.5",
     "browser-sync": "^2.9.11",
